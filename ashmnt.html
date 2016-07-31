@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript">
+function save()
+{
+	if(typeof (Storage)!=="undefined")
+	{  
+		if(localStorage.ticket != null)
+		{
+			localStorage.ticket=Number(localStorage.ticket)+1;
+			localStorage.name=document.getElementById("name").value;
+			localStorage.address=document.getElementById("address").value;
+			localStorage.course=document.getElementById("course").value;
+		}
+		else
+		{
+			localStorage.ticket=1;
+			localStorage.name=document.getElementById("name").value;
+			localStorage.address=document.getElementById("address").value;
+			localStorage.course=document.getElementById("course").value;
+		}
+		
+		
+	}
+	document.getElementById("ticketno").innerHTML = Number(localStorage.ticket);
+}
+</script>
+</head>
+<body>
+<form>
+<span>Ticket No:</span><span id="ticketno"></span><br />
+  Name: <input type="text" id="name"><br>
+  Address: <input type="text" id="address"><br>
+   Course: <input type="text" id="course"><br>
+  <button type="button" onClick="save()">Submit</button>
+   <button type="button" onClick="print()">Print</button>
+   <div id="ticket"></div>
+</form>
+</body>
+</html>

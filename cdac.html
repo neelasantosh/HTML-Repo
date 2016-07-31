@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>ticket</title>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "Ticket No " + localStorage.clickcount ;
+		
+		
+    }
+}
+</script>
+</head>
+<body>
+<table>
+  <tr><td>First name: <input type="text" name="fname"></tr></td><br>
+  <tr><td>Address: <input type="text" name="add"></tr></td><br>
+  <tr><td>Course name: <input type="text" name="cname"></tr></td><br>
+  <tr><td> <p><button onclick="clickCounter()" type="button">submit</button></p></tr></td>
+   <tr><td><button onclick="video.html" type="button">print</button></p></tr></td>
+ <div id="result"></div>
+</table>
+
+
+</body>
+
+
+
+
+</html>
